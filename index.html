@@ -8,17 +8,7 @@
     <link rel="shortcut icon" type="image/png" href="images/clawLogoOrange.png">
     <link rel="stylesheet" type="text/css" href="css/publicityBoard.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700|Teko:500" rel="stylesheet">
-
-    <script>
-        function cad() {
-            document.getElementById('interactiveCAD').style = "";
-            document.getElementById('robo').style = "display:none";
-        }
-        function robo() {
-            document.getElementById('interactiveCAD').style = "display:none";
-            document.getElementById('robo').style = "";
-        }
-    </script>
+    <script src="js/index.js"></script>
 </head>
 
 <body style="text-align: center">
@@ -31,65 +21,76 @@
     </header>
 
     <div class="divider"></div>
-
-    <iframe id="interactiveCAD" style="display:none"
-        src="https://viewer.autodesk.com/id/dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6YTM2MHZpZXdlci90MTU1MjYwMjY3MjAwNl8wMzQ4MzkwMTcxMTU0NzYzNDVfMTU1MjYwMjY3MjE4OS5zbGRhc20?sheetId=YmE0YzhmNzktMDBhZC00NmE5LTg1NzYtZGQzNWM1OTliZGU1&designtype=sldasm"></iframe>
-    <div id="robo" class="robo">
-        <table style="margin-left: auto;margin-right: auto; width:80vw">
-            <tr>
-                <td>
-                    <ul>
-                        <h2>Drivetrain</h2>
-                        <li>Mechanum</li>
-                        <li>4 wheels</li>
-                        <li>4 CIMs</li>
-                    </ul>
-                    <br />
-                </td>
-                <td>
-                    <ul>
-                        <h2>Climb</h2>
-                        <li>Level 2</li>
-                        <li>Starts at Level 2</li>
-                        <li>3 Pistons</li>
-                    </ul>
-                    <br />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <ul>
-                        <h2>Hatch</h2>
-                        <li>Outtake: To level 2</li>
-                        <li>Intake: Depot</li>
-                        <li>Piston Hook</li>
-
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <h2>Cargo</h2>
-                        <li>Outtake: To Level 2</li>
-                        <li>Intake: Ground/Depot</li>
-                        <li>Mecanum Roller</li>
-                    </ul>
-                </td>
-
-            </tr>
-
-
-        </table>
-        <br />
-        <ul>
-            <h2>Statistics</h2>
-            <li>Cycle Time: ~15 secs</li>
-            <li>Height: 43.5 inches</li>
-            <li>Length & Width: 29 7/8 in</li>
-        </ul>
+    <div id="Home" class="tabcontent">
+        <iframe id="interactiveCAD"
+            src="https://viewer.autodesk.com/id/dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6YTM2MHZpZXdlci90MTU1MjYwMjY3MjAwNl8wMzQ4MzkwMTcxMTU0NzYzNDVfMTU1MjYwMjY3MjE4OS5zbGRhc20?sheetId=YmE0YzhmNzktMDBhZC00NmE5LTg1NzYtZGQzNWM1OTliZGU1&designtype=sldasm"></iframe>
     </div>
-    <button id="cad" style="font-size:30px;" onclick="cad();">CAD</button><button id="robo" style="font-size:30px;"
-        onclick="robo();">Robot Info</button>
-    <div class="divider"></div>
+    <div id="Robot Info" class="tabcontent">
+        <iframe id="interactiveCAD" src="slides.html"></iframe>
+
+    </div>
+    <div id="Robot Inf" class="tabcontent">
+        <div id="robo" class="robo">
+            <table style="margin-left: auto;margin-right: auto; width:80vw">
+                <tr>
+                    <td>
+                        <ul>
+                            <h2>Drivetrain</h2>
+                            <li>Mechanum</li>
+                            <li>4 wheels</li>
+                            <li>4 CIMs</li>
+                        </ul>
+                        <br />
+                    </td>
+                    <td>
+                        <ul>
+                            <h2>Climb</h2>
+                            <li>Level 2</li>
+                            <li>Starts at Level 2</li>
+                            <li>3 Pistons</li>
+                        </ul>
+                        <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <h2>Hatch</h2>
+                            <li>Outtake: To level 2</li>
+                            <li>Intake: Depot</li>
+                            <li>Piston Hook</li>
+
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <h2>Cargo</h2>
+                            <li>Outtake: To Level 2</li>
+                            <li>Intake: Ground/Depot</li>
+                            <li>Mecanum Roller</li>
+                        </ul>
+                    </td>
+
+                </tr>
+
+
+            </table>
+            <br />
+            <ul>
+                <h2>Statistics</h2>
+                <li>Cycle Time: ~15 secs</li>
+                <li>Height: 43.5 inches</li>
+                <li>Length & Width: 29 7/8 in</li>
+            </ul>
+        </div>
+    </div>
+    <div id="Business Plan" class="tabcontent"></div>
+
+    <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'Home')">Home</button>
+        <button class="tablinks" onclick="openCity(event, 'Robot Info')">Robot Info</button>
+        <button class="tablinks" onclick="openCity(event, 'Business Plan')">Business Plan</button>
+    </div>
     <div id="sponsors">
 
 
