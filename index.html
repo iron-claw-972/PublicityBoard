@@ -8,7 +8,11 @@
     <link rel="shortcut icon" type="image/png" href="images/clawLogoOrange.png">
     <link rel="stylesheet" type="text/css" href="css/publicityBoard.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700|Teko:500" rel="stylesheet">
+    <script src="js/build/three.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/OBJLoader.js"></script>
+
+
 </head>
 
 <body style="text-align: center">
@@ -22,8 +26,9 @@
 
     <div class="divider"></div>
     <div id="Home" class="tabcontent">
-        <iframe id="interactiveCAD"
-            src="https://viewer.autodesk.com/id/dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6YTM2MHZpZXdlci90MTU1MjYwMjY3MjAwNl8wMzQ4MzkwMTcxMTU0NzYzNDVfMTU1MjYwMjY3MjE4OS5zbGRhc20?sheetId=YmE0YzhmNzktMDBhZC00NmE5LTg1NzYtZGQzNWM1OTliZGU1&designtype=sldasm"></iframe>
+        <div id="container">
+            <canvas id="canvas"></canvas>
+        </div>
     </div>
     <div id="Robot Info" class="tabcontent">
         <iframe id="interactiveCAD" src="slides.html"></iframe>
@@ -135,7 +140,44 @@
     </div>
     </div>
 
+    <script>
+        var scene = new THREE.Scene();
+        var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        var drawingSurface = document.getElementById('canvas');
+        var renderer = new THREE.WebGLRenderer({ antialias: true, canvas: drawingSurface });
 
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setSize(400, 400);
+
+        var loader = new THREE.OBJLoader();
+
+        // load a resource
+        loader.load(
+            // resource URL
+            'Final Assembly Cad.obj',
+            // called when resource is loaded
+            function (object) {
+
+                scene.add(object);
+
+            },
+            // called when loading is in progresses
+            function (xhr) {
+
+                console.log((xhr.loaded / xhr.total * 100) + '% loaded');
+
+            },
+            // called when loading has errors
+            function (error) {
+
+                console.log('An error happened');
+
+            }
+        );
+
+
+
+    </script>
 </body>
 
 </html>
