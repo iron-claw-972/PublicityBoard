@@ -149,7 +149,7 @@
         var drawingSurface = document.getElementById('canvas');
         var renderer = new THREE.WebGLRenderer({ antialias: true, canvas: drawingSurface });
         renderer.setSize(800, 800);
-        document.body.appendChild(renderer.domElement);
+
 
         var controls = new THREE.OrbitControls(camera, renderer.domElement);
         controls.enableDamping = true;
