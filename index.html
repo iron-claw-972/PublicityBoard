@@ -30,13 +30,16 @@
         <button class="tablinks" onclick="openCity(event, 'Robot Info')">Robot Info</button>
         <button class="tablinks" onclick="openCity(event, 'Business Plan')">Business Plan</button>
     </div>
+    <div id="Business Plan" class="tabcontent">
+        <iframe style="width:100vw;height:75vh" id="interactiveCAD" src="businessPlan.html"></iframe>
+    </div>
     <div id="Home" class="tabcontent">
         <div id="container">
             <canvas id="canvas" style="height:0px"></canvas>
         </div>
     </div>
     <div id="Robot Info" class="tabcontent">
-        <iframe style="width:100vw;height:60vh" id="interactiveCAD" src="slides.html"></iframe>
+        <iframe style="width:100vw;height:75vh" id="interactiveCAD" src="slides.html"></iframe>
 
     </div>
     <div id="Robot Inf" class="tabcontent">
@@ -148,7 +151,7 @@
         camera.position.z = 50;
         var drawingSurface = document.getElementById('canvas');
         var renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, canvas: drawingSurface });
-        renderer.setSize(1000, 1200);
+        renderer.setSize(1000, 1370);
         renderer.setClearColor(0xffffff, 1);
 
         var controls = new THREE.OrbitControls(camera, renderer.domElement);
