@@ -28,79 +28,28 @@
     <div class="tab">
         <button class="tablinks" onclick="openCity(event, 'Home')">Home</button>
         <button class="tablinks" onclick="openCity(event, 'Robot Info')">Robot Info</button>
+        <button class="tablinks" onclick="openCity(event, 'About Us')">About Us</button>
         <button class="tablinks" onclick="openCity(event, 'Business Plan')">Business Plan</button>
+
     </div>
     <div id="Business Plan" class="tabcontent">
-        <iframe style="width:100vw;height:75vh" id="interactiveCAD" src="businessPlan.html"></iframe>
+        <iframe style="width:100vw;height:75vh" id="businessPlan" src="businessPlan.html"></iframe>
+    </div>
+    <div id="About Us" class="tabcontent">
+        <iframe style="width:100vw;height:75vh" id="About Us" src="About.html"></iframe>
     </div>
     <div id="Home" class="tabcontent">
-        <div id="container">
-            <canvas id="canvas" style="height:0px"></canvas>
-        </div>
+        <img src="images/CroppedRobot.gif" style="width:100vw;padding-top:10vh;">
     </div>
     <div id="Robot Info" class="tabcontent">
         <iframe style="width:100vw;height:75vh" id="interactiveCAD" src="slides.html"></iframe>
 
     </div>
-    <div id="Robot Inf" class="tabcontent">
-        <div id="robo" class="robo">
-            <table style="margin-left: auto;margin-right: auto; width:80vw">
-                <tr>
-                    <td>
-                        <ul>
-                            <h2>Drivetrain</h2>
-                            <li>Mechanum</li>
-                            <li>4 wheels</li>
-                            <li>4 CIMs</li>
-                        </ul>
-                        <br />
-                    </td>
-                    <td>
-                        <ul>
-                            <h2>Climb</h2>
-                            <li>Level 2</li>
-                            <li>Starts at Level 2</li>
-                            <li>3 Pistons</li>
-                        </ul>
-                        <br />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <ul>
-                            <h2>Hatch</h2>
-                            <li>Outtake: To level 2</li>
-                            <li>Intake: Depot</li>
-                            <li>Piston Hook</li>
 
-                        </ul>
-                    </td>
-                    <td>
-                        <ul>
-                            <h2>Cargo</h2>
-                            <li>Outtake: To Level 2</li>
-                            <li>Intake: Ground/Depot</li>
-                            <li>Mecanum Roller</li>
-                        </ul>
-                    </td>
-
-                </tr>
-
-
-            </table>
-            <br />
-            <ul>
-                <h2>Statistics</h2>
-                <li>Cycle Time: ~15 secs</li>
-                <li>Height: 43.5 inches</li>
-                <li>Length & Width: 29 7/8 in</li>
-            </ul>
-        </div>
-    </div>
     <div id="Business Plan" class="tabcontent"></div>
 
 
-    <div id="sponsors">
+    <div id="sponsors" style="position:fixed;bottom:0;left:0;padding-bottom:1.5vh;">
 
 
         <div id="oddMarqueeDiv">
@@ -149,62 +98,64 @@
     </div>
 
     <script>
+        if (false) {
 
-        var scene = new THREE.Scene();
-        var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        camera.position.z = 50;
-        var drawingSurface = document.getElementById('canvas');
-        var renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, canvas: drawingSurface });
-        renderer.setSize(1000, 1000);
-        renderer.setClearColor(0xffffff, 1);
 
-        var controls = new THREE.OrbitControls(camera, renderer.domElement);
-        controls.enableDamping = true;
-        controls.dampingFactor = 0.25;
-        controls.enableZoom = true;
-        controls.enablePan = false;
+            var scene = new THREE.Scene();
+            var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.z = 50;
+            var drawingSurface = document.getElementById('canvas');
+            var renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, canvas: drawingSurface });
+            renderer.setSize(1000, 1000);
+            renderer.setClearColor(0xffffff, 1);
 
-        var keyLight = new THREE.DirectionalLight(new THREE.Color('hsl(30, 100%, 75%)'), 1.0);
-        keyLight.position.set(-100, 0, 100);
+            var controls = new THREE.OrbitControls(camera, renderer.domElement);
+            controls.enableDamping = true;
+            controls.dampingFactor = 0.25;
+            controls.enableZoom = true;
+            controls.enablePan = false;
 
-        var fillLight = new THREE.DirectionalLight(new THREE.Color('hsl(240, 100%, 75%)'), 0.75);
-        fillLight.position.set(100, 0, 100);
+            var keyLight = new THREE.DirectionalLight(new THREE.Color('hsl(30, 100%, 75%)'), 1.0);
+            keyLight.position.set(-100, 0, 100);
 
-        var backLight = new THREE.DirectionalLight(0xffffff, 1.0);
-        backLight.position.set(100, 0, -100).normalize();
+            var fillLight = new THREE.DirectionalLight(new THREE.Color('hsl(240, 100%, 75%)'), 0.75);
+            fillLight.position.set(100, 0, 100);
 
-        scene.add(keyLight);
-        scene.add(fillLight);
-        scene.add(backLight);
+            var backLight = new THREE.DirectionalLight(0xffffff, 1.0);
+            backLight.position.set(100, 0, -100).normalize();
 
-        var mtlLoader = new THREE.MTLLoader();
-        mtlLoader.setTexturePath('');
-        mtlLoader.setPath('');
-        mtlLoader.load('Final Assembly Cad.mtl', function (materials) {
+            scene.add(keyLight);
+            scene.add(fillLight);
+            scene.add(backLight);
 
-            materials.preload();
+            var mtlLoader = new THREE.MTLLoader();
+            mtlLoader.setTexturePath('');
+            mtlLoader.setPath('');
+            mtlLoader.load('Final Assembly Cad.mtl', function (materials) {
 
-            var objLoader = new THREE.OBJLoader();
-            objLoader.setMaterials(materials);
-            objLoader.setPath('');
-            objLoader.load('Final Assembly Cad.obj', function (object) {
+                materials.preload();
 
-                scene.add(object);
-                object.position.y -= 60;
+                var objLoader = new THREE.OBJLoader();
+                objLoader.setMaterials(materials);
+                objLoader.setPath('');
+                objLoader.load('Final Assembly Cad.obj', function (object) {
+
+                    scene.add(object);
+                    object.position.y -= 60;
+
+                });
 
             });
 
-        });
+            var animate = function () {
+                requestAnimationFrame(animate);
+                controls.update();
+                renderer.render(scene, camera);
+            };
 
-        var animate = function () {
-            requestAnimationFrame(animate);
-            controls.update();
-            renderer.render(scene, camera);
-        };
+            animate();
 
-        animate();
-
-
+        }
 
     </script>
 </body>

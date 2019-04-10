@@ -83,7 +83,7 @@ p {
     font-size: 3.2vw;
 }
 
-iframe canvas{
+iframe canvas embed{
     border: none;
     margin: 2vh 0 2vh 0;
     flex: 1 1 auto;
@@ -184,6 +184,6 @@ button{
 .tabcontent {
   display: none;
 
-  border: 1px solid #ccc;
+  border:0;
   border-top: none;
 }
