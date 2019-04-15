@@ -5,6 +5,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <style>
+        div.wrap {
+            text-align: center;
+        }
+    </style>
+
     <!-- CLEAN MARKUP = GOOD KARMA.
       Hi source code lover,
 
@@ -159,8 +165,8 @@
                             </a>
                         </li>
                     </ul>
-                    <img src="images/Elevator1.JPG" style="width:90vw" />
-                    <img src="images/Gearbox1.JPG" style="width:90vw" />
+                    <img src="images/Elevator1.JPG" style="height: 35vh;" />
+                    <img src="images/Gearbox1.png" style="height: 35vh;" />
                 </div>
                 <!-- .end .wrap -->
             </section>
@@ -174,7 +180,19 @@
     <script src="js/webslides.js"></script>
 
     <script>
-        window.ws = new WebSlides({ autoslide: 5000 });
+        window.ws = new WebSlides();
+        var autoSlide = window.setInterval(function() {
+            window.ws.goNext();
+        }, 5000);
+        document.body.addEventListener("mousedown", function() {
+            alert("workd");
+            window.clearInterval(autoSlide)
+            window.setTimeout(function() {
+                autoSlide = window.setInterval(function() {
+                    window.ws.goNext();
+                }, 5000);
+            }, 20000);
+        });
     </script>
 
     <!-- OPTIONAL - svg-icons.js (fontastic.me - Font Awesome as svg icons) -->
