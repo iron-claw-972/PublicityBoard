@@ -13,148 +13,164 @@
     <script src="js/OBJLoader.js"></script>
     <script src="js/OrbitControls.js"></script>
     <script src="js/MTLLoader.js"></script>
-
+    <script>
+        function meme() {
+            var memes = ["Michael BARTHEL", "I Need More Thermal Paste", "Wood is just soft metal", "Hip don't lie"]
+            var imgmemes = ["images/beany.jpg", "images/eb.png", "images/vincent.gif", "images/ryan.PNG"]
+            var rmeme = memes[Math.floor(Math.random() * memes.length)];
+            var rimgmeme = imgmemes[Math.floor(Math.random() * imgmemes.length)];
+            document.getElementById('imgmeme').src = rimgmeme; document.getElementById('meme').textContent = rmeme; document.getElementById('yayy').style.display = 'block'; document.getElementById('poo').style.display = 'none'; window.setTimeout(function () { document.getElementById('poo').style.display = 'block'; document.getElementById('yayy').style.display = 'none' }, 3000);
+        }
+    </script>
 </head>
 
 <body style="text-align: center">
+    <span id="poo" style="">
+        <header>
 
-    <header>
+            <img id="clawLogo" src="images/FinalStrokeLogo.png" />
+            <h1 style="font-family: 'Teko', sans-serif;">Iron Claw Robotics</h1>
 
-        <img id="clawLogo" src="images/FinalStrokeLogo.png" />
-        <h1 style="font-family: 'Teko', sans-serif;">Iron Claw Robotics</h1>
-
-    </header>
-
-    <div class="tab">
-        <button class="tablinks" onclick="openCity(event, 'Home')">Home</button>
-        <button class="tablinks" onclick="openCity(event, 'Robot Info')">Robot Info</button>
-        <button class="tablinks" onclick="openCity(event, 'About Us')">About Us</button>
-        <button class="tablinks" onclick="openCity(event, 'Business Plan')">Business Plan</button>
-
-    </div>
-    <div id="Business Plan" class="tabcontent">
-        <iframe style="width:100vw;height:75vh;border:none;" id="businessPlan" src="pdf/Pboard.pdf" type="application/pdf"></iframe>
-    </div>
-    <div id="About Us" class="tabcontent">
-        <iframe style="width:100vw;height:75vh;border:none;" id="About Us" src="About.html"></iframe>
-    </div>
-    <div id="Home" class="tabcontent">
-        <img src="images/972_2019_CAD_Robot.gif" style="width:100vw;border:none;">
-    </div>
-    <div id="Robot Info" class="tabcontent">
-        <iframe style="width:100vw;height:75vh;border:none;" id="interactiveCAD" src="slides.html"></iframe>
-    </div>
-
-
-    <div id="sponsors" style="position:fixed;bottom:0;left:0;padding-bottom:1.5vh;">
-
-
-        <div id="oddMarqueeDiv">
-            <img class="sponsorImage" src="images/sponsorLogos/newMilleniumFoundation.png" />
-            <img class="sponsorImage" src="images/sponsorLogos/aeronet.png" />
-            <img class="sponsorImage" src="images/sponsorLogos/campusInsuranceService.png" />
-            <img class="sponsorImage" src="images/sponsorLogos/google.png" />
-            <img class="sponsorImage" src="images/sponsorLogos/facilitron.png" />
-            <img class="sponsorImage" src="images/sponsorLogos/baeSystems.png" />
-            <img class="sponsorImage" src="images/sponsorLogos/rotaryClubLosGatos.png" />
-            <img class="sponsorImage" src="images/sponsorLogos/qualcomm.png" />
-            <img class="sponsorImage" src="images/sponsorLogos/lockheedMartin.png" />
-            <img class="sponsorImage" src="images/sponsorLogos/brRacing.png" />
-            <img class="sponsorImage" src="images/sponsorLogos/atlas.png" />
-            <img class="sponsorImage" src="images/sponsorLogos/intuitiveSurgical.png" />
-            <img class="sponsorImage" style="filter: brightness(0);" src="images/sponsorLogos/texasInstruments.png" />
-            <img class="sponsorImage" src="images/sponsorLogos/tempCFO.png" />
-            <img class="sponsorImage" src="images/sponsorLogos/nowForeverStudios.png" />
-            <img class="sponsorImage" src="images/sponsorLogos/lg.jpeg" />
-            <img class="sponsorImage" src="images/sponsorLogos/defense.png" />
+        </header>
+        <button onclick="meme()"></button>
+        <div class="tab">
+            <button class="tablinks" onclick="openCity(event, 'Home')">Home</button>
+            <button class="tablinks" onclick="openCity(event, 'Robot Info')">Robot Info</button>
+            <button class="tablinks" onclick="openCity(event, 'About Us')">About Us</button>
+            <button class="tablinks" onclick="openCity(event, 'Business Plan')">Business Plan</button>
 
         </div>
-
-        <div id="evenMarqueeDiv">
-            <img class="sponsorImage" src="images/sponsorLogos/newMilleniumFoundation.png" />
-            <img class="sponsorImage" src="images/sponsorLogos/aeronet.png" />
-            <img class="sponsorImage" src="images/sponsorLogos/campusInsuranceService.png" />
-            <img class="sponsorImage" src="images/sponsorLogos/google.png" />
-            <img class="sponsorImage" src="images/sponsorLogos/facilitron.png" />
-            <img class="sponsorImage" src="images/sponsorLogos/baeSystems.png" />
-            <img class="sponsorImage" src="images/sponsorLogos/rotaryClubLosGatos.png" />
-            <img class="sponsorImage" src="images/sponsorLogos/qualcomm.png" />
-            <img class="sponsorImage" src="images/sponsorLogos/lockheedMartin.png" />
-            <img class="sponsorImage" src="images/sponsorLogos/brRacing.png" />
-            <img class="sponsorImage" src="images/sponsorLogos/atlas.png" />
-            <img class="sponsorImage" src="images/sponsorLogos/intuitiveSurgical.png" />
-            <img class="sponsorImage" style="filter: brightness(0);" src="images/sponsorLogos/texasInstruments.png" />
-            <img class="sponsorImage" src="images/sponsorLogos/tempCFO.png" />
-            <img class="sponsorImage" src="images/sponsorLogos/nowForeverStudios.png" />
-            <img class="sponsorImage" src="images/sponsorLogos/lg.jpeg" />
-            <img class="sponsorImage" src="images/sponsorLogos/defense.png" />
+        <div id="Business Plan" class="tabcontent">
+            <iframe style="width:100vw;height:75vh;border:none;" id="businessPlan" src="pdf/Pboard.pdf"
+                type="application/pdf"></iframe>
+        </div>
+        <div id="About Us" class="tabcontent">
+            <iframe style="width:100vw;height:75vh;border:none;" id="About Us" src="About.html"></iframe>
+        </div>
+        <div id="Home" class="tabcontent">
+            <img src="images/972_2019_CAD_Robot.gif" style="width:100vw;border:none;">
+        </div>
+        <div id="Robot Info" class="tabcontent">
+            <iframe style="width:100vw;height:75vh;border:none;" id="interactiveCAD" src="slides.html"></iframe>
         </div>
 
 
-    </div>
-    </div>
-
-    <script>
-        if (false) {
+        <div id="sponsors" style="position:fixed;bottom:0;left:0;padding-bottom:1.5vh;">
 
 
-            var scene = new THREE.Scene();
-            var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-            camera.position.z = 50;
-            var drawingSurface = document.getElementById('canvas');
-            var renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, canvas: drawingSurface });
-            renderer.setSize(1000, 1000);
-            renderer.setClearColor(0xffffff, 1);
+            <div id="oddMarqueeDiv">
+                <img class="sponsorImage" src="images/sponsorLogos/newMilleniumFoundation.png" />
+                <img class="sponsorImage" src="images/sponsorLogos/aeronet.png" />
+                <img class="sponsorImage" src="images/sponsorLogos/campusInsuranceService.png" />
+                <img class="sponsorImage" src="images/sponsorLogos/google.png" />
+                <img class="sponsorImage" src="images/sponsorLogos/facilitron.png" />
+                <img class="sponsorImage" src="images/sponsorLogos/baeSystems.png" />
+                <img class="sponsorImage" src="images/sponsorLogos/rotaryClubLosGatos.png" />
+                <img class="sponsorImage" src="images/sponsorLogos/qualcomm.png" />
+                <img class="sponsorImage" src="images/sponsorLogos/lockheedMartin.png" />
+                <img class="sponsorImage" src="images/sponsorLogos/brRacing.png" />
+                <img class="sponsorImage" src="images/sponsorLogos/atlas.png" />
+                <img class="sponsorImage" src="images/sponsorLogos/intuitiveSurgical.png" />
+                <img class="sponsorImage" style="filter: brightness(0);"
+                    src="images/sponsorLogos/texasInstruments.png" />
+                <img class="sponsorImage" src="images/sponsorLogos/tempCFO.png" />
+                <img class="sponsorImage" src="images/sponsorLogos/nowForeverStudios.png" />
+                <img class="sponsorImage" src="images/sponsorLogos/lg.jpeg" />
+                <img class="sponsorImage" src="images/sponsorLogos/defense.png" />
 
-            var controls = new THREE.OrbitControls(camera, renderer.domElement);
-            controls.enableDamping = true;
-            controls.dampingFactor = 0.25;
-            controls.enableZoom = true;
-            controls.enablePan = false;
+            </div>
 
-            var keyLight = new THREE.DirectionalLight(new THREE.Color('hsl(30, 100%, 75%)'), 1.0);
-            keyLight.position.set(-100, 0, 100);
+            <div id="evenMarqueeDiv">
+                <img class="sponsorImage" src="images/sponsorLogos/newMilleniumFoundation.png" />
+                <img class="sponsorImage" src="images/sponsorLogos/aeronet.png" />
+                <img class="sponsorImage" src="images/sponsorLogos/campusInsuranceService.png" />
+                <img class="sponsorImage" src="images/sponsorLogos/google.png" />
+                <img class="sponsorImage" src="images/sponsorLogos/facilitron.png" />
+                <img class="sponsorImage" src="images/sponsorLogos/baeSystems.png" />
+                <img class="sponsorImage" src="images/sponsorLogos/rotaryClubLosGatos.png" />
+                <img class="sponsorImage" src="images/sponsorLogos/qualcomm.png" />
+                <img class="sponsorImage" src="images/sponsorLogos/lockheedMartin.png" />
+                <img class="sponsorImage" src="images/sponsorLogos/brRacing.png" />
+                <img class="sponsorImage" src="images/sponsorLogos/atlas.png" />
+                <img class="sponsorImage" src="images/sponsorLogos/intuitiveSurgical.png" />
+                <img class="sponsorImage" style="filter: brightness(0);"
+                    src="images/sponsorLogos/texasInstruments.png" />
+                <img class="sponsorImage" src="images/sponsorLogos/tempCFO.png" />
+                <img class="sponsorImage" src="images/sponsorLogos/nowForeverStudios.png" />
+                <img class="sponsorImage" src="images/sponsorLogos/lg.jpeg" />
+                <img class="sponsorImage" src="images/sponsorLogos/defense.png" />
+            </div>
 
-            var fillLight = new THREE.DirectionalLight(new THREE.Color('hsl(240, 100%, 75%)'), 0.75);
-            fillLight.position.set(100, 0, 100);
 
-            var backLight = new THREE.DirectionalLight(0xffffff, 1.0);
-            backLight.position.set(100, 0, -100).normalize();
+        </div>
+        </div>
 
-            scene.add(keyLight);
-            scene.add(fillLight);
-            scene.add(backLight);
+        <script>
+            if (false) {
 
-            var mtlLoader = new THREE.MTLLoader();
-            mtlLoader.setTexturePath('');
-            mtlLoader.setPath('');
-            mtlLoader.load('Final Assembly Cad.mtl', function (materials) {
 
-                materials.preload();
+                var scene = new THREE.Scene();
+                var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+                camera.position.z = 50;
+                var drawingSurface = document.getElementById('canvas');
+                var renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, canvas: drawingSurface });
+                renderer.setSize(1000, 1000);
+                renderer.setClearColor(0xffffff, 1);
 
-                var objLoader = new THREE.OBJLoader();
-                objLoader.setMaterials(materials);
-                objLoader.setPath('');
-                objLoader.load('Final Assembly Cad.obj', function (object) {
+                var controls = new THREE.OrbitControls(camera, renderer.domElement);
+                controls.enableDamping = true;
+                controls.dampingFactor = 0.25;
+                controls.enableZoom = true;
+                controls.enablePan = false;
 
-                    scene.add(object);
-                    object.position.y -= 60;
+                var keyLight = new THREE.DirectionalLight(new THREE.Color('hsl(30, 100%, 75%)'), 1.0);
+                keyLight.position.set(-100, 0, 100);
+
+                var fillLight = new THREE.DirectionalLight(new THREE.Color('hsl(240, 100%, 75%)'), 0.75);
+                fillLight.position.set(100, 0, 100);
+
+                var backLight = new THREE.DirectionalLight(0xffffff, 1.0);
+                backLight.position.set(100, 0, -100).normalize();
+
+                scene.add(keyLight);
+                scene.add(fillLight);
+                scene.add(backLight);
+
+                var mtlLoader = new THREE.MTLLoader();
+                mtlLoader.setTexturePath('');
+                mtlLoader.setPath('');
+                mtlLoader.load('Final Assembly Cad.mtl', function (materials) {
+
+                    materials.preload();
+
+                    var objLoader = new THREE.OBJLoader();
+                    objLoader.setMaterials(materials);
+                    objLoader.setPath('');
+                    objLoader.load('Final Assembly Cad.obj', function (object) {
+
+                        scene.add(object);
+                        object.position.y -= 60;
+
+                    });
 
                 });
 
-            });
+                var animate = function () {
+                    requestAnimationFrame(animate);
+                    controls.update();
+                    renderer.render(scene, camera);
+                };
 
-            var animate = function () {
-                requestAnimationFrame(animate);
-                controls.update();
-                renderer.render(scene, camera);
-            };
+                animate();
 
-            animate();
+            }
 
-        }
-
-    </script>
+        </script>
+    </span>
+    <span id="yayy" style="display:none">
+        <h1 id="meme">michael BARTHEL</h1>
+        <img id="imgmeme" src=""></img>
+    </span>
 </body>
 
 </html>

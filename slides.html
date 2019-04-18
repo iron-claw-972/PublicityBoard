@@ -181,14 +181,14 @@
 
     <script>
         window.ws = new WebSlides();
-        var autoSlide = window.setInterval(function() {
+        var autoSlide = window.setInterval(function () {
             window.ws.goNext();
         }, 5000);
-        document.body.addEventListener("mousedown", function() {
-            alert("workd");
+        document.body.addEventListener("touchstart", function () {
+            //alert("workd");
             window.clearInterval(autoSlide)
-            window.setTimeout(function() {
-                autoSlide = window.setInterval(function() {
+            window.setTimeout(function () {
+                autoSlide = window.setInterval(function () {
                     window.ws.goNext();
                 }, 5000);
             }, 20000);
