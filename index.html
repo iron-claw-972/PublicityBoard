@@ -15,8 +15,8 @@
     <script src="js/MTLLoader.js"></script>
     <script>
         function meme() {
-            var memes = ["Michael BARTHEL", "I Need More Thermal Paste", "Wood is just soft metal", "Hip don't lie", "The council works in mysterious ways"]
-            var imgmemes = ["images/beany.jpg", "images/eb.png", "images/vincent.gif", "images/ryan.PNG"]
+            var memes = ["Michael BARTHEL", "I Need More Thermal Paste", "Wood is just soft metal", "Hip don't lie", "The council works in mysterious ways","But mom, MY BURGER IS IN THE TRUNK"]
+            var imgmemes = ["images/beany.jpg", "images/eb.png", "images/vincent.gif", "images/ryan.PNG","images/davy.jpg","images/julian.jpg","images/fund.jpg","images/broken.jpg","images/kamen.jpg","images/rodrigo.jpg","images/programming.jpg"]
             var rmeme = memes[Math.floor(Math.random() * memes.length)];
             var rimgmeme = imgmemes[Math.floor(Math.random() * imgmemes.length)];
             document.getElementById('imgmeme').src = rimgmeme; document.getElementById('meme').textContent = rmeme; document.getElementById('yayy').style.display = 'block'; document.getElementById('poo').style.display = 'none'; window.setTimeout(function () { document.getElementById('poo').style.display = 'block'; document.getElementById('yayy').style.display = 'none' }, 3000);

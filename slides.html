@@ -188,6 +188,7 @@
             //alert("workd");
             window.clearInterval(autoSlide)
             window.setTimeout(function () {
+                window.clearInterval(autoSlide)
                 autoSlide = window.setInterval(function () {
                     window.ws.goNext();
                 }, 5000);
