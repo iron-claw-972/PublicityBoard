@@ -19,6 +19,11 @@
     src: url(../fonts/bebas/BEBAS.ttf);
 }
 
+@font-face {
+    font-family: "Barlow";
+    src: url("../fonts/Barlow/Barlow-Regular.ttf");
+}
+
 
 * {
     padding: 0;
